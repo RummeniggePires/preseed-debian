@@ -1,2 +1,2 @@
 # preseed-debian
-arquivo para automatizar instalacao de servidor debian.
+Arquivo para automatizar instalacao de servidor debian.
