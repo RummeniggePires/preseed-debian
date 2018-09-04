@@ -12,11 +12,11 @@ Nesse caso apresento a forma pela rede.
 
 Ao dar boot no pendrive/cd para instalação terá essa tela
 
-![boot-install](/home/nick/git/preseed-debian/img/boot-debian.png)
+![boot-install](https://raw.githubusercontent.com/RummeniggePires/preseed-debian/master/img/boot-debian.png)
 
 Precione a tecla TAB para editar a inicialização da instalação
 
-![boot-boot](/home/nick/git/preseed-debian/img/boot-edit.png)
+![boot-edit](https://raw.githubusercontent.com/RummeniggePires/preseed-debian/master/img/boot-edit.png)
 
 Após a palavra quiet adione auto url=http://endereco/do/arquivo/preseed.cfg e tecle enter.
 
