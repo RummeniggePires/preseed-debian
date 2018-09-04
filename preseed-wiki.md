@@ -63,4 +63,34 @@ Para definir um tempo limite de detecção de link diferente (o padrão é 3 seg
 Valores são interpretados como segundos.
 ```
 	d-i netcfg/link_detection_timeout string 10
-``` 
+```
+Se você tiver um servidor dhcp lento e o instalador expirar, esperando isso pode ser útil.
+```
+	d-i netcfg/dhcp_timeout string 60
+	d-i netcfg/dhcpv6_timeout string 60
+```
+Se você preferir configurar a rede manualmente
+```
+	d-i netcfg/disable_autoconfig boolean true
+```
+Se você quiser que o arquivo de pré-configuração funcione em sistemas com e sem um servidor dhcp.
+```
+	d-i netcfg/dhcp_failed note
+	d-i netcfg/dhcp_options select Configure network manually
+```
+Para configuração estática da rede
+```
+	IPv4 exemplo
+	d-i netcfg/get_ipaddress string 192.168.1.42
+	d-i netcfg/get_netmask string 255.255.255.0
+	d-i netcfg/get_gateway string 192.168.1.1
+	d-i netcfg/get_nameservers string 192.168.1.1
+	d-i netcfg/confirm_static boolean true
+
+	IPv6 exemplo
+	d-i netcfg/get_ipaddress string fc00::2
+	d-i netcfg/get_netmask string ffff:ffff:ffff:ffff::
+	d-i netcfg/get_gateway string fc00::1
+	d-i netcfg/get_nameservers string fc00::1
+	d-i netcfg/confirm_static boolean true
+```
