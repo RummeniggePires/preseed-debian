@@ -1,10 +1,10 @@
-##Considerações
+## Considerações
 
 Após me ser concedido o desafio de automatizar a formatação de máquinas físicas encontrei algumas dificuldades e com esse material desejo sanar algumas das que você, caro leitor, possa ter também.
 
 Será explicado cada seção da receita, a base foi retirada do site do [Debian](https://www.debian.org/releases/wheezy/example-preseed.txt). E no final sera deixado a minha receita final.
 
-##Como utilizar o arquivo
+## Como utilizar o arquivo
 
 O resultado da receita tem que ser salvo em um arquivo com formato .cfg e deixar acessivel a maquina que o utilizara, pode ser via rede ou dentro do pendrive/cd utilizado para formatar.
 
@@ -20,7 +20,7 @@ Precione a tecla TAB para editar a inicialização da instalação
 
 Após a palavra quiet adione auto url=http://endereco/do/arquivo/preseed.cfg e tecle enter.
 
-##Como fazer seu preseed-debian
+## Como fazer seu preseed-debian
 
 O código é dividido por blocos para facilitar a leitura. Deve ser seguida a ordem dos blocos.
 
