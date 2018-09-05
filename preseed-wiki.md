@@ -94,3 +94,41 @@ Para configuração estática da rede
 	d-i netcfg/get_nameservers string fc00::1
 	d-i netcfg/confirm_static boolean true
 ```
+Qualquer nome de host e nomes de domínio atribuídos a partir do dhcp têm precedência sobre valores definidos aqui. No entanto, a configuração dos valores ainda impede as perguntas de ser mostrado, mesmo se os valores vierem do dhcp. (Isso segundo a documentação, na pratica o arquivo só será utilizado após esse ponto, pois aqui a maquina recebe um ip da rede e comeca a trafegar dados.)
+```
+	d-i netcfg/get_hostname string unassigned-hostname
+	d-i netcfg/get_domain string unassigned-domain
+```
+ Se você quiser forçar um nome de host, independentemente de qual seja o DHCP server retorna ou o que é a entrada de DNS reversa para o IP, descomente e ajuste a linha a seguir.
+```
+ 	d-i netcfg/hostname string somehost
+```
+Desabilitar caixa de diálogo da senha WEP
+```
+	d-i netcfg/wireless_wep string
+```
+ISPs usam como uma espécie de senha
+```
+ 	d-i netcfg/dhcp_hostname string radish
+```
+Se for necessário firmware não livre para a rede ou outro hardware, você pode configure o instalador para sempre tentar carregá-lo, sem avisar. Ou mude para falso para desativar a pergunta.
+```
+	d-i hw-detect/load_firmware boolean true
+```
+Use as seguintes configurações se você deseja usar o console de rede componente para instalação remota via SSH. Isso só faz sentido se você pretendem executar o restante da instalação manualmente.
+```
+	d-i anna/choose_modules string network-console
+	d-i network-console/authorized_keys_url string http://10.0.0.1/openssh-key
+	d-i network-console/password password r00tme
+	d-i network-console/password-again password r00tme
+```
+
+Configurações de espelho, se você selecionar ftp, a sequência de espelhamento/país não precisará ser definida.
+```
+	d-i mirror/protocol string ftp
+	d-i mirror/country string manual
+	d-i mirror/http/hostname string http.us.debian.org
+	d-i mirror/http/directory string /debian
+	d-i mirror/http/proxy string
+```
+
