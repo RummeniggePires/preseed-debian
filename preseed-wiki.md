@@ -131,4 +131,11 @@ Configurações de espelho, se você selecionar ftp, a sequência de espelhament
 	d-i mirror/http/directory string /debian
 	d-i mirror/http/proxy string
 ```
-
+Suite de instalação.
+```
+	d-i mirror/suite string testing
+```
+Suite a ser usada para carregar componentes do instalador(opcional)
+```
+d-i mirror/udeb/suite string testing
+```
