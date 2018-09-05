@@ -139,3 +139,43 @@ Suite a ser usada para carregar componentes do instalador(opcional)
 ```
 d-i mirror/udeb/suite string testing
 ```
+Configuracao das contas
+Pula a criação do root (o usuário normal pode usar o sudo).
+```
+	d-i passwd/root-login boolean false
+```
+Alternativa para não criar usuário normal.
+```
+	d-i passwd/make-user boolean false
+```
+Senha do root, com texto simple
+```
+	d-i passwd/root-password password r00tme
+	d-i passwd/root-password-again password r00tme
+```
+Criptografado usanda hash MD5.
+```
+	d-i passwd/root-password-crypted password [MD5 hash]
+```
+Para criar uma conta de usuário normal.
+```
+	d-i passwd/user-fullname string Debian User
+	d-i passwd/username string debian
+```
+Senha do usuário normal, com texto simples
+```
+	d-i passwd/user-password password insecure
+	d-i passwd/user-password-again password insecure
+```
+Criptografado usando um hash MD5.
+```
+	d-i passwd/user-password-crypted password [MD5 hash]
+```
+Crie o primeiro usuário com o UID especificado em vez do padrão.
+```
+	d-i passwd/user-uid string 1010
+```
+A conta do usuário será adicionada a alguns grupos iniciais padrão. Para substituir isso, use isso.
+```
+	d-i passwd/user-default-groups string audio cdrom video
+```
