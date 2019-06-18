@@ -6,7 +6,7 @@ Será explicado cada seção da receita, a base foi retirada do site do [Debian]
 
 ## Como utilizar o arquivo
 
-O resultado da receita tem que ser salvo em um arquivo com formato .cfg e deixar acessivel a maquina que o utilizara, pode ser via rede ou dentro do pendrive/cd utilizado para formatar.
+O resultado da receita tem que ser salvo em um arquivo com formato .cfg e deixar acessível a máquina que o utilizara, pode ser via rede ou dentro do pendrive/cd utilizado para formatar.
 
 Nesse caso apresento a forma pela rede.
 
@@ -18,7 +18,7 @@ Precione a tecla TAB para editar a inicialização da instalação
 
 ![boot-edit](https://raw.githubusercontent.com/RummeniggePires/preseed-debian/master/img/boot-edit.png)
 
-Após a palavra quiet adione auto url=http://endereco/do/arquivo/preseed.cfg e tecle enter.
+Após a palavra quiet adione "auto url=http://endereco/do/arquivo/preseed.cfg" sem as aspas e tecle enter.
 
 ## Como fazer seu preseed-debian
 
